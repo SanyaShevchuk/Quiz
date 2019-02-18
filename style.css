@@ -38,15 +38,31 @@ span{
   width: 100%;
 }
 
+#count button{
+  position: relative;
+  margin-right: 10px;
+  margin-bottom: 5px;
+  float: right;
+  height: 20px;
+  width: 50px;
+  background-color: black;
+  color: white;
+  border-radius: 5px;
+  border: none;
+  transition: all 0.1s ease;
+}
+
 
 #gameOver{
   display: none;
-  
   margin: auto;
-
-  width: 150px;
+  width: 170px;
   height: 150px;
   margin-top: 200px;
+}
+
+#gameOver span{
+  margin-left: 15%;
 }
 
 #restart{
@@ -60,4 +76,13 @@ button:hover{
 button:active{
   width: 160px;
   height: 45px;
+}
+
+#hint:hover{
+  background-color: red;
+}
+
+#hint:active{
+  top:-1px;
+  right: 1px;
 }

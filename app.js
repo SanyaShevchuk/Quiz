@@ -1,6 +1,8 @@
 document.getElementById('restart').onclick = restart;
 var buttons = document.querySelectorAll('#content button');
 var countQuestion=0, rightAnswers=0;
+var cheat = false;
+var hint = document.getElementById('hint');
 
 class Question {
   constructor(question, firstVar, secondVar, thirdVar, fourthVar, correct){
@@ -40,7 +42,7 @@ function restart(){
 }
 
 function checkAnswers(bthValue){
-  if(bthValue === questions[countQuestion].correct)
+  if(bthValue === questions[countQuestion].correct && !cheat)
     rightAnswers++;
   countQuestion++;
 }
@@ -48,6 +50,11 @@ function checkAnswers(bthValue){
 function update(){
   if(this.name)
     checkAnswers(this.name);
+  if(cheat){
+    hint.style.display = "block";
+    buttons[questions[countQuestion-1].correct].style.backgroundColor = "rgb(82,186,179)";
+    cheat = false;
+    }
   if(countQuestion<questions.length){
   document.getElementById('question').innerHTML = questions[countQuestion].question;
   var variants = document.getElementsByClassName('variant');
@@ -85,3 +92,10 @@ for(var i=0; i < buttons.length; i++){
   buttons[i].onclick = update;
 }
 
+hint.onclick = function(){
+  if(confirm("Are you sure you want to look up answer? You will not get a point after that in this question!")){
+    this.style.display = 'none';
+    buttons[questions[countQuestion].correct].style.backgroundColor = "red";
+    cheat = true;
+  }
+};
