@@ -62,11 +62,20 @@ function update(){
     document.querySelector('h1').style.display = 'none';
     document.getElementById('gameOver').style.display = "block";
     document.querySelector('#gameOver span').innerHTML+=rightAnswers;
-    if(rightAnswers===questions.length)
-      document.querySelector('#gameOver h1').innerHTML = "Congratulations!";
-    else if(rightAnswers===questions.length-1)
-      document.querySelector('#gameOver h1').innerHTML = "Well done!";
-    else document.querySelector('#gameOver h1').innerHTML = "Game over!";
+    var h1 = document.querySelector('#gameOver h1');
+    if(rightAnswers===questions.length){
+      h1.innerHTML = "Congratulations!";
+      h1.style.color = "green";
+      h1.style.marginLeft = "-30px";
+    }
+    else if(rightAnswers===questions.length-1){
+      h1.innerHTML = "Well done!";
+      h1.style.color = "orange";
+    }
+    else {
+      h1.innerHTML = "Game over!";
+      h1.style.color = "red";
+    }
   }
 }
 
