@@ -1,0 +1,63 @@
+h1{
+  font-weight: 100;
+}
+
+h2{
+  font-weight: 100;
+  opacity: 0.7;
+}
+
+#content{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+button{
+  background-color: rgb(82,186,179);
+  border: none;
+  border-radius: 5px;
+  color: white;
+  height: 40px;
+  width: 150px;
+
+  transition: all 0.1s ease;
+}
+
+span{
+  margin-bottom: 10px;
+  margin-top: 35px;
+  font-weight: 100;
+  opacity: 0.7;
+}
+
+#count{
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+
+#gameOver{
+  display: none;
+  
+  margin: auto;
+
+  width: 150px;
+  height: 150px;
+  margin-top: 200px;
+}
+
+#restart{
+  margin-top: 20px;
+}
+
+button:hover{
+  background-color: rgb(0,128,0);
+}
+
+button:active{
+  width: 160px;
+  height: 45px;
+}
