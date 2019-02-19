@@ -68,21 +68,23 @@ span{
 #restart{
   margin-top: 20px;
 }
-
+/*
+After changing css by js hover style lose, so we use important
+*/
 button:hover{
-  background-color: rgb(0,128,0);
+  background-color: rgb(0,128,0) !important; 
 }
 
 button:active{
-  width: 160px;
-  height: 45px;
+  width: 160px !important;
+  height: 45px !important;
 }
 
 #hint:hover{
-  background-color: red;
+  background-color: red !important;
 }
 
 #hint:active{
-  top:-1px;
-  right: 1px;
+  top:-1px !important;
+  right: 1px !important;
 }
